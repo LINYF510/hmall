@@ -5,7 +5,7 @@ spring:
     name: item-service
   cloud:
     nacos:
-      server-addr: 10.225.237.206:8848 # nacos地址
+      server-addr: localhost:8848 # nacos地址
   profiles:
     active: dev
   datasource:
