@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="SqlDialectMappings">
-    <file url="file://$APPLICATION_CONFIG_DIR$/scratches/数据库文件/hm-cart.sql" dialect="MySQL" />
-  </component>
-</project>

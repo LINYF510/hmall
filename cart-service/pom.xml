@@ -43,12 +43,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.heima</groupId>
-            <artifactId>hm-service</artifactId>
-            <version>1.0.0</version>
-            <scope>compile</scope>
-        </dependency>
         <!--nacos 服务注册发现-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
