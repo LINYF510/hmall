@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  hm-gateway:
+    build: ./hm-gateway
+    image: hm-gateway:latest
+    container_name: hmall  # 设置自定义容器名称
+    ports:
+      - "8080:8080"
+    networks:
+      - hmall
+    depends_on:
+      - cart-service
+      - item-service
+      - pay-service
+      - trade-service
+      - user-service
+
+  cart-service:
+    build: ./cart-service
+    image: cart-service:latest
+    networks:
+      - hmall
+    deploy:
+      replicas: 1
+    ports:
+      - "8082"
+
+  item-service:
+    build: ./item-service
+    image: item-service:latest
+    networks:
+      - hmall
+    deploy:
+      replicas: 3
+    ports:
+      - "8081"
+
+  pay-service:
+    build: ./pay-service
+    image: pay-service:latest
+    networks:
+      - hmall
+    deploy:
+      replicas: 1
+    ports:
+      - "8086"
+
+  trade-service:
+    build: ./trade-service
+    image: trade-service:latest
+    networks:
+      - hmall
+    deploy:
+      replicas: 1
+    ports:
+      - "8085"
+
+  user-service:
+    build: ./user-service
+    image: user-service:latest
+    networks:
+      - hmall
+    deploy:
+      replicas: 1
+    ports:
+      - "8084"
+
+networks:
+  hmall:
+    name: hmall
+    driver: bridge
+    external: true
